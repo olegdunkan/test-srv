@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       contents: read
       packages: write
@@ -29,13 +29,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        env:
-          BUILDKIT_PROGRESS: plain
         uses: docker/build-push-action@v5
         with:
-          context: .
-          platforms: linux/arm64
-          no-cache: true
+          context: .ß
           push: true
           tags: |
             ghcr.io/${{ github.repository }}:latest
