@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: podname-http
-          image: hashicorp/http-echo:1.0
+          image: hashicorp/http-echo:2.0
           args:
             - "-text=$(POD_NAME)"
           env:
