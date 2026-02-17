@@ -20,15 +20,12 @@ jobs:
 
       - name: Rename file
         run: |
-          # If artifact.txt doesn't exist, create it with a simple timestamped line
-          if [ ! -f artifact.txt ]; then
-            echo "artifact.txt not found — creating it"
-            echo "Created at $(date -u +%Y-%m-%dT%H:%M:%SZ)" > artifact.txt
-          fi
-
-          # Rename with timestamp
           TIMESTAMP=$(date +%Y%m%d%H%M%S)
-          mv artifact.txt "artifact-${TIMESTAMP}.txt"
+          TARGET="artifact-${TIMESTAMP}.txt"
+
+          # remove other artifact-*.txt files (keep none)
+          rm -f artifact-*.txt
+          touch "$TARGET"
 
       - name: Commit changes
         run: |
