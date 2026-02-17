@@ -1,5 +1,6 @@
 {
   "name": "ts-express-echo",
+  "type": "module",
   "version": "0.1.0",
   "description": "Minimal TypeScript + Express echo server",
   "main": "dist/index.js",
