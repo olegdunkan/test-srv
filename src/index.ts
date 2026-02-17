@@ -6,7 +6,12 @@ interface EchoResponse {
 
 const app = express();
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
-
+app.get(
+  '/',
+  (req: Request<any>, res: Response<EchoResponse>) => {
+    return res.json({ message: 'Hello, World!' });
+  }
+);
 app.get(
   '/:message',
   (req: Request<{ message: string }, EchoResponse>, res: Response<EchoResponse>) => {
