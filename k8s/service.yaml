@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: podname-http
-          image: ghcr.io/olegdunkan/test-srv:0.4.0
+          image: ghcr.io/olegdunkan/test-srv:0.4.1
           ports:
             - containerPort: 3000
 ---
