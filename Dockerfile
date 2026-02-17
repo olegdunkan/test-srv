@@ -1,5 +1,5 @@
 # Stage 1: Сборка
-FROM node:24-alpine AS builder
+FROM node:24-slim AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
