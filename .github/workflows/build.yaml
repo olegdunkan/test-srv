@@ -10,7 +10,7 @@ permissions:
 
 env:
   REGISTRY_IMAGE: ghcr.io/${{ github.repository }}
-
+  BUILDX_NO_DEFAULT_ATTESTATIONS: 1
 jobs:
   build:
     strategy:
